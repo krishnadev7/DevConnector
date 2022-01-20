@@ -63,6 +63,7 @@ export const register =
         type: REGISTER_FAIL,
       });
     }
+    // dispatch(loadUser());
   };
 
 // Login user
