@@ -68,9 +68,9 @@ router.post(
     if (company) profileField.company = company;
     if (website) profileField.website = website;
     if (location) profileField.location = location;
-    if (bio) profileField.location = bio;
-    if (status) profileField.location = status;
-    if (githubusername) profileField.location = githubusername;
+    if (bio) profileField.bio = bio;
+    if (status) profileField.status = status;
+    if (githubusername) profileField.githubusername = githubusername;
     if (skills) {
       profileField.skills = skills.split(',').map(skill => skill.trim());
     }
@@ -314,7 +314,8 @@ router.get('/github/:username', (req, res) => {
       uri: `https://api.github.com/users/${
         req.params.username
       }/repos?per_page=5&sort=created:asc&client_id=${config.get(
-        'githubClientId')}&client_secret=${config.get('githubSecret')}`,
+        'githubClientId'
+      )}&client_secret=${config.get('githubSecret')}`,
       method: 'GET',
       headers: { 'user-agent': 'node.js' },
     };
@@ -323,7 +324,7 @@ router.get('/github/:username', (req, res) => {
       if (error) console.error(error);
 
       if (response.statusCode !== 200) {
-      return res.status(400).json({ msg: 'No Github profile found' });
+        return res.status(400).json({ msg: 'No Github profile found' });
       }
 
       res.json(JSON.parse(body));

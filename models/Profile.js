@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const ProfileSchema = new mongoose.Schema({
   user: {
@@ -16,7 +16,7 @@ const ProfileSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    required: false,
+    required: true,
   },
   skills: {
     type: [String],
@@ -61,53 +61,53 @@ const ProfileSchema = new mongoose.Schema({
     {
       school: {
         type: String,
-        required: true
+        required: true,
       },
       degree: {
         type: String,
-        required: true
+        required: true,
       },
       fieldofstudy: {
         type: String,
-        required: true
+        required: true,
       },
       from: {
         type: Date,
-        required: true
+        required: true,
       },
       to: {
-        type: Date
+        type: Date,
       },
       current: {
         type: Boolean,
-        default: false
+        default: false,
       },
       description: {
-        type: String
-      }
-    }
+        type: String,
+      },
+    },
   ],
   social: {
     youtube: {
-      type: String
+      type: String,
     },
     twitter: {
-      type: String
+      type: String,
     },
     facebook: {
-      type: String
+      type: String,
     },
     linkedin: {
-      type: String
+      type: String,
     },
     instagram: {
-      type: String
-    }
+      type: String,
+    },
   },
   date: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
-module.exports = mongoose.model('profile', ProfileSchema);
+module.exports = Profile = mongoose.model('profile', ProfileSchema);
