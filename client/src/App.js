@@ -14,6 +14,7 @@ import EditProfile from './components/profile-form/EditProfile';
 import AddExperiance from './components/profile-form/AddExperiance';
 import AddEducation from './components/profile-form/AddEducation';
 import Profile from './components/profile/Profile';
+import Posts from './components/post/Posts';
 
 
 // Redux
@@ -21,7 +22,6 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
-import Posts from './components/post/Posts';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
