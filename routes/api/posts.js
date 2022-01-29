@@ -157,7 +157,7 @@ router.put('/unlike/:id', auth, async (req, res) => {
 // @ private
 
 router.post(
-  '/comments/:id',
+  '/comment/:id',
   [auth, [check('text', 'Text is required').not().isEmpty()]],
   async (req, res) => {
     const errors = validationResult(req);
