@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://krish:krish@cluster0.mhqw4.mongodb.net/DevConnectorDB?retryWrites=true&w=majority",
+    "jwtSecret": "jwtSecretToken",
+    "githubClientId": "fafe14341a5bfd60b9ca",
+    "githubSecret": "08c3db96081235662d1622c04826b3f292dd016a"
+}
